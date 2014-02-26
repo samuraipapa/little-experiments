@@ -70,7 +70,7 @@
     CGPathAddLineToPoint(octPath, nil, _myOctagon.size.width/4, -_myOctagon.size.height/2);
 
     _myOctagon.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:octPath];
-
+    CGPathRelease(octPath);
     
     [self addChild:_myOctagon];
     
@@ -103,7 +103,10 @@
         
         [self myCircleAdd];
         [_myCircle setPosition:location];
-         
+        
+        [self myOctagonAdd];
+        [_myOctagon setPosition:location];
+        
         }
 }
 
