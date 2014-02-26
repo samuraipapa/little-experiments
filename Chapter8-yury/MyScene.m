@@ -26,7 +26,7 @@
     _myCircle = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
     [_myCircle setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
     _myCircle.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_myCircle.size.width/2];
-    _myCircle.physicsBody.restitution = 1.2;
+    _myCircle.physicsBody.restitution = 1.0;
     
     [self addChild:_myCircle];
     
@@ -87,8 +87,10 @@
     _sand = [SKSpriteNode spriteNodeWithImageNamed:@"sand"];
    
     _sand.position = CGPointMake((float)(arc4random()%(int)self.size.width), self.size.height - _sand.size.height);
+    [_sand setName:@"sand"];
     _sand.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_sand.size.width/2];
-    _sand.physicsBody.restitution = 1.0;
+ //   _sand.physicsBody.restitution = 1.0;
+    _sand.physicsBody.density = 125.0;
     
     
     //   _pointTouched = CGPointMake(self.size.width, self.size.height/2);
@@ -102,7 +104,7 @@
     [self runAction:[SKAction repeatAction:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSand) onTarget:self] ,
                                                                 [SKAction waitForDuration:0.02]
                                                                 ]]
-            count:30]
+            count:130]
      ];
      
 }
@@ -111,7 +113,7 @@
     [self runAction:[SKAction repeatAction:[SKAction sequence:@[[SKAction performSelector:@selector(myCircleAdd) onTarget:self] ,
                                                                 [SKAction waitForDuration:0.02]
                                                                 ]]
-                                     count:7]
+                                     count:10]
      ];
     
 }
@@ -140,13 +142,15 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
+    for (SKSpriteNode *node in self.children){
+        if ([node.name isEqualToString:@"sand"]) {
+            [node.physicsBody applyImpulse:CGVectorMake(0, 500)];
+            [node.physicsBody setAffectedByGravity:NO];
+        }
+    }
+    
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-    //    _pointTouched = location;
-        [self spawnBunchOfSand];
-        
-        //        [_sand setPosition:location];
-        
         }
 }
 
