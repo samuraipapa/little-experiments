@@ -21,6 +21,8 @@
     
     _myCircle = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
     [_myCircle setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    _myCircle.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_myCircle.size.width/2];
+    
     [self addChild:_myCircle];
     
 }
@@ -28,6 +30,7 @@
 -(void) mySquareAdd{
     _mySquare = [SKSpriteNode spriteNodeWithImageNamed:@"square"];
     [_mySquare setPosition:CGPointMake(self.size.width * 0.25, self.size.height * 0.5)];
+    _mySquare.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_mySquare.size];
     [self addChild:_mySquare];
 
 }
@@ -35,7 +38,19 @@
 -(void) myTriangleAdd{
     _myTriangle = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
     [_myTriangle setPosition:CGPointMake(self.size.width*0.75, self.size.height/2)];
+    
+    CGMutablePathRef trianglePath = CGPathCreateMutable();
+    CGPathMoveToPoint(trianglePath, nil, _myTriangle.size.width/2, -_myTriangle.size.height/2);
+    CGPathAddLineToPoint(trianglePath, nil, 0, _myTriangle.size.height/2);
+    CGPathAddLineToPoint(trianglePath, nil, -_myTriangle.size.width/2, -_myTriangle.size.height/2);
+    CGPathAddLineToPoint(trianglePath, nil, _myTriangle.size.width/2, -_myTriangle.size.height/2);
+    
+    _myTriangle.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:trianglePath];
+    
     [self addChild:_myTriangle];
+    
+//    CGPathRelease(trianglePath);
+    
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -43,6 +58,8 @@
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor blackColor];
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        
         [self labelAdd];
         [self myCircleAdd];
         [self mySquareAdd];
@@ -57,17 +74,13 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
+       // [self myTriangleAdd];
+       // [_myTriangle setPosition:location];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+        [self myCircleAdd];
+        [_myCircle setPosition:location];
+         
+        }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -87,3 +100,19 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
