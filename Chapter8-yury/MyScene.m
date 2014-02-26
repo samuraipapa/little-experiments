@@ -13,10 +13,12 @@
 @property SKSpriteNode* mySquare;
 @property SKSpriteNode* myTriangle;
 @property SKSpriteNode* myOctagon;
+@property SKSpriteNode* sand;
 
 @end
 
 @implementation MyScene
+
 
 -(void) myCircleAdd{
     
@@ -53,6 +55,7 @@
 }
 
 
+
 -(void) myOctagonAdd{
     
     _myOctagon = [SKSpriteNode spriteNodeWithImageNamed:@"octagon"];
@@ -77,6 +80,16 @@
     
 }
 
+-(void) spawnSand{
+    
+    _sand = [SKSpriteNode spriteNodeWithImageNamed:@"sand"];
+    _sand.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_sand.size.width/2];
+
+    [self addChild:_sand];
+    
+    
+}
+
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -89,6 +102,8 @@
         [self mySquareAdd];
         [self myTriangleAdd];
         [self myOctagonAdd];
+        [self spawnSand];
+        
         }
     return self;
 }
@@ -98,16 +113,28 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [self myTriangleAdd];
-        [_myTriangle setPosition:location];
-        
-        [self myCircleAdd];
-        [_myCircle setPosition:location];
-        
-        [self myOctagonAdd];
-        [_myOctagon setPosition:location];
+        [self spawnSand];
+        [_sand setPosition:location];
         
         }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        [self spawnSand];
+        [_sand setPosition:location];
+        
+    }
+    
+}
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event  {
+    _myTriangle.physicsBody.affectedByGravity = YES;
+    _myTriangle.physicsBody.dynamic = YES;
+    
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {
