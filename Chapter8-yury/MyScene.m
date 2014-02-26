@@ -26,6 +26,7 @@
     _myCircle = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
     [_myCircle setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
     _myCircle.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_myCircle.size.width/2];
+    _myCircle.physicsBody.restitution = 1.2;
     
     [self addChild:_myCircle];
     
@@ -106,6 +107,14 @@
      
 }
 
+-(void) spawnBunchOfCircles{
+    [self runAction:[SKAction repeatAction:[SKAction sequence:@[[SKAction performSelector:@selector(myCircleAdd) onTarget:self] ,
+                                                                [SKAction waitForDuration:0.02]
+                                                                ]]
+                                     count:7]
+     ];
+    
+}
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -116,11 +125,13 @@
         self.physicsBody.restitution = 1.0;
         
         [self labelAdd];
-        [self myCircleAdd];
-        [self mySquareAdd];
-        [self myTriangleAdd];
-        [self myOctagonAdd];
+//        [self myCircleAdd];
+//        [self mySquareAdd];
+//        [self myTriangleAdd];
+//        [self myOctagonAdd];
+        [self spawnBunchOfCircles];
         [self spawnBunchOfSand  ];
+        
         
         }
     return self;

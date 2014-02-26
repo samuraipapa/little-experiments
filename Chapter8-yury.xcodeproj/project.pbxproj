@@ -30,6 +30,9 @@
 		FC0CAD2418BE151600F19187 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1F18BE151600F19187 /* square.png */; };
 		FC0CAD2518BE151600F19187 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2018BE151600F19187 /* triangle.png */; };
 		FC0CAD2718BE4A9B00F19187 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2618BE4A9B00F19187 /* Default-Landscape@2x~ipad.png */; };
+		FC0CAD2B18BE4BAA00F19187 /* Screenshot 2014.02.26 11.14.43.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2818BE4BAA00F19187 /* Screenshot 2014.02.26 11.14.43.png */; };
+		FC0CAD2C18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.03.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2918BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.03.png */; };
+		FC0CAD2D18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.06.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2A18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.06.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		FC0CAD1F18BE151600F19187 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		FC0CAD2018BE151600F19187 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		FC0CAD2618BE4A9B00F19187 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		FC0CAD2818BE4BAA00F19187 /* Screenshot 2014.02.26 11.14.43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.02.26 11.14.43.png"; sourceTree = "<group>"; };
+		FC0CAD2918BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.02.26 11.16.03.png"; sourceTree = "<group>"; };
+		FC0CAD2A18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.02.26 11.16.06.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,9 @@
 		FC0CAD1B18BE151600F19187 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				FC0CAD2818BE4BAA00F19187 /* Screenshot 2014.02.26 11.14.43.png */,
+				FC0CAD2918BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.03.png */,
+				FC0CAD2A18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.06.png */,
 				FC0CAD1C18BE151600F19187 /* circle.png */,
 				FC0CAD1D18BE151600F19187 /* octagon.png */,
 				FC0CAD1E18BE151600F19187 /* sand.png */,
@@ -268,9 +277,12 @@
 			files = (
 				FC0CACEC18BE112100F19187 /* InfoPlist.strings in Resources */,
 				FC0CACFF18BE112100F19187 /* Images.xcassets in Resources */,
+				FC0CAD2B18BE4BAA00F19187 /* Screenshot 2014.02.26 11.14.43.png in Resources */,
 				FC0CAD2318BE151600F19187 /* sand.png in Resources */,
+				FC0CAD2C18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.03.png in Resources */,
 				FC0CAD2118BE151600F19187 /* circle.png in Resources */,
 				FC0CAD2518BE151600F19187 /* triangle.png in Resources */,
+				FC0CAD2D18BE4BAA00F19187 /* Screenshot 2014.02.26 11.16.06.png in Resources */,
 				FC0CAD2718BE4A9B00F19187 /* Default-Landscape@2x~ipad.png in Resources */,
 				FC0CAD2218BE151600F19187 /* octagon.png in Resources */,
 				FC0CACFD18BE112100F19187 /* Spaceship.png in Resources */,
