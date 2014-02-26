@@ -29,6 +29,7 @@
 		FC0CAD2318BE151600F19187 /* sand.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1E18BE151600F19187 /* sand.png */; };
 		FC0CAD2418BE151600F19187 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1F18BE151600F19187 /* square.png */; };
 		FC0CAD2518BE151600F19187 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2018BE151600F19187 /* triangle.png */; };
+		FC0CAD2718BE4A9B00F19187 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2618BE4A9B00F19187 /* Default-Landscape@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FC0CAD1E18BE151600F19187 /* sand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand.png; sourceTree = "<group>"; };
 		FC0CAD1F18BE151600F19187 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		FC0CAD2018BE151600F19187 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		FC0CAD2618BE4A9B00F19187 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		FC0CACD318BE112100F19187 = {
 			isa = PBXGroup;
 			children = (
+				FC0CAD2618BE4A9B00F19187 /* Default-Landscape@2x~ipad.png */,
 				FC0CACE718BE112100F19187 /* Chapter8-yury */,
 				FC0CAD0B18BE112100F19187 /* Chapter8-yuryTests */,
 				FC0CACDE18BE112100F19187 /* Frameworks */,
@@ -268,6 +271,7 @@
 				FC0CAD2318BE151600F19187 /* sand.png in Resources */,
 				FC0CAD2118BE151600F19187 /* circle.png in Resources */,
 				FC0CAD2518BE151600F19187 /* triangle.png in Resources */,
+				FC0CAD2718BE4A9B00F19187 /* Default-Landscape@2x~ipad.png in Resources */,
 				FC0CAD2218BE151600F19187 /* octagon.png in Resources */,
 				FC0CACFD18BE112100F19187 /* Spaceship.png in Resources */,
 				FC0CAD2418BE151600F19187 /* square.png in Resources */,
