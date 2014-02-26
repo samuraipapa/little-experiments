@@ -12,6 +12,7 @@
 @property SKSpriteNode * myCircle;
 @property SKSpriteNode* mySquare;
 @property SKSpriteNode* myTriangle;
+@property SKSpriteNode* myOctagon;
 
 @end
 
@@ -46,10 +47,33 @@
     CGPathAddLineToPoint(trianglePath, nil, _myTriangle.size.width/2, -_myTriangle.size.height/2);
     
     _myTriangle.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:trianglePath];
+    CGPathRelease(trianglePath);
     
     [self addChild:_myTriangle];
+}
+
+
+-(void) myOctagonAdd{
     
-//    CGPathRelease(trianglePath);
+    _myOctagon = [SKSpriteNode spriteNodeWithImageNamed:@"octagon"];
+    [_myOctagon setPosition:CGPointMake(self.size.width*0.5, self.size.height * 0.75)];
+    
+    CGMutablePathRef octPath = CGPathCreateMutable();
+    CGPathMoveToPoint(octPath, nil, _myOctagon.size.width/4, -_myOctagon.size.height/2);
+    CGPathAddLineToPoint(octPath, nil, _myOctagon.size.width/2, -_myOctagon.size.height/4);
+    CGPathAddLineToPoint(octPath, nil, _myOctagon.size.width/2, _myOctagon.size.height/4);
+    CGPathAddLineToPoint(octPath, nil, _myOctagon.size.width/4, _myOctagon.size.height/2);
+    CGPathAddLineToPoint(octPath, nil, -_myOctagon.size.width/4, _myOctagon.size.height/2);
+    CGPathAddLineToPoint(octPath, nil, -_myOctagon.size.width/2, _myOctagon.size.height/4);
+    CGPathAddLineToPoint(octPath, nil, -_myOctagon.size.width/2, -_myOctagon.size.height/4);
+    CGPathAddLineToPoint(octPath, nil, -_myOctagon.size.width/4, -_myOctagon.size.height/2);
+    CGPathAddLineToPoint(octPath, nil, _myOctagon.size.width/4, -_myOctagon.size.height/2);
+
+    _myOctagon.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:octPath];
+
+    
+    [self addChild:_myOctagon];
+    
     
 }
 
@@ -64,7 +88,7 @@
         [self myCircleAdd];
         [self mySquareAdd];
         [self myTriangleAdd];
-        
+        [self myOctagonAdd];
         }
     return self;
 }
@@ -74,8 +98,8 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-       // [self myTriangleAdd];
-       // [_myTriangle setPosition:location];
+        [self myTriangleAdd];
+        [_myTriangle setPosition:location];
         
         [self myCircleAdd];
         [_myCircle setPosition:location];
@@ -85,6 +109,9 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
+    
+    
 }
 
 -(void) labelAdd{
