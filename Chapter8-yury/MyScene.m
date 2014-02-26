@@ -84,11 +84,15 @@
 -(void) spawnSand{
     
     _sand = [SKSpriteNode spriteNodeWithImageNamed:@"sand"];
-    _sand.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_sand.size.width/2];
    
- //   _pointTouched = CGPointMake(self.size.width, self.size.height/2);
+    _sand.position = CGPointMake((float)(arc4random()%(int)self.size.width), self.size.height - _sand.size.height);
+    _sand.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_sand.size.width/2];
+    _sand.physicsBody.restitution = 1.0;
+    
+    
+    //   _pointTouched = CGPointMake(self.size.width, self.size.height/2);
 //    _sand.position = CGPointMake(self.size.width/2, self.size.height/2);
-    _sand.position = _pointTouched;
+//    _sand.position = _pointTouched;
     
     [self addChild:_sand];
 }
@@ -97,7 +101,7 @@
     [self runAction:[SKAction repeatAction:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSand) onTarget:self] ,
                                                                 [SKAction waitForDuration:0.02]
                                                                 ]]
-            count:100]
+            count:30]
      ];
      
 }
@@ -107,15 +111,16 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor blackColor];
+        self.backgroundColor = [SKColor whiteColor];
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody.restitution = 1.0;
         
         [self labelAdd];
         [self myCircleAdd];
         [self mySquareAdd];
         [self myTriangleAdd];
         [self myOctagonAdd];
-    //    [self spawnBunchOfSand  ];
+        [self spawnBunchOfSand  ];
         
         }
     return self;
@@ -126,7 +131,7 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        _pointTouched = location;
+    //    _pointTouched = location;
         [self spawnBunchOfSand];
         
         //        [_sand setPosition:location];
@@ -138,8 +143,8 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [self spawnSand];
-        [_sand setPosition:location];
+   //     [self spawnSand];
+   //     [_sand setPosition:location];
         
     }
     
