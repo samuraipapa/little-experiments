@@ -24,6 +24,11 @@
 		FC0CAD0818BE112100F19187 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0CACE318BE112100F19187 /* UIKit.framework */; };
 		FC0CAD1018BE112100F19187 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD0E18BE112100F19187 /* InfoPlist.strings */; };
 		FC0CAD1218BE112100F19187 /* Chapter8_yuryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0CAD1118BE112100F19187 /* Chapter8_yuryTests.m */; };
+		FC0CAD2118BE151600F19187 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1C18BE151600F19187 /* circle.png */; };
+		FC0CAD2218BE151600F19187 /* octagon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1D18BE151600F19187 /* octagon.png */; };
+		FC0CAD2318BE151600F19187 /* sand.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1E18BE151600F19187 /* sand.png */; };
+		FC0CAD2418BE151600F19187 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD1F18BE151600F19187 /* square.png */; };
+		FC0CAD2518BE151600F19187 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CAD2018BE151600F19187 /* triangle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		FC0CAD0D18BE112100F19187 /* Chapter8-yuryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chapter8-yuryTests-Info.plist"; sourceTree = "<group>"; };
 		FC0CAD0F18BE112100F19187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC0CAD1118BE112100F19187 /* Chapter8_yuryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chapter8_yuryTests.m; sourceTree = "<group>"; };
+		FC0CAD1C18BE151600F19187 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		FC0CAD1D18BE151600F19187 /* octagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octagon.png; sourceTree = "<group>"; };
+		FC0CAD1E18BE151600F19187 /* sand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand.png; sourceTree = "<group>"; };
+		FC0CAD1F18BE151600F19187 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
+		FC0CAD2018BE151600F19187 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,7 @@
 				FC0CAD0B18BE112100F19187 /* Chapter8-yuryTests */,
 				FC0CACDE18BE112100F19187 /* Frameworks */,
 				FC0CACDD18BE112100F19187 /* Products */,
+				FC0CAD1B18BE151600F19187 /* Shapes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +173,18 @@
 				FC0CAD0E18BE112100F19187 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC0CAD1B18BE151600F19187 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CAD1C18BE151600F19187 /* circle.png */,
+				FC0CAD1D18BE151600F19187 /* octagon.png */,
+				FC0CAD1E18BE151600F19187 /* sand.png */,
+				FC0CAD1F18BE151600F19187 /* square.png */,
+				FC0CAD2018BE151600F19187 /* triangle.png */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +265,12 @@
 			files = (
 				FC0CACEC18BE112100F19187 /* InfoPlist.strings in Resources */,
 				FC0CACFF18BE112100F19187 /* Images.xcassets in Resources */,
+				FC0CAD2318BE151600F19187 /* sand.png in Resources */,
+				FC0CAD2118BE151600F19187 /* circle.png in Resources */,
+				FC0CAD2518BE151600F19187 /* triangle.png in Resources */,
+				FC0CAD2218BE151600F19187 /* octagon.png in Resources */,
 				FC0CACFD18BE112100F19187 /* Spaceship.png in Resources */,
+				FC0CAD2418BE151600F19187 /* square.png in Resources */,
 				FC0CACF518BE112100F19187 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
