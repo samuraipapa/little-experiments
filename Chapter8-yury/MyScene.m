@@ -14,6 +14,7 @@
 @property SKSpriteNode* myTriangle;
 @property SKSpriteNode* myOctagon;
 @property SKSpriteNode* sand;
+@property CGPoint pointTouched;
 
 @end
 
@@ -59,7 +60,7 @@
 -(void) myOctagonAdd{
     
     _myOctagon = [SKSpriteNode spriteNodeWithImageNamed:@"octagon"];
-    [_myOctagon setPosition:CGPointMake(self.size.width*0.5, self.size.height * 0.75)];
+    [_myOctagon setPosition:CGPointMake(self.size.width*0.45, self.size.height * 0.75)];
     
     CGMutablePathRef octPath = CGPathCreateMutable();
     CGPathMoveToPoint(octPath, nil, _myOctagon.size.width/4, -_myOctagon.size.height/2);
@@ -84,11 +85,23 @@
     
     _sand = [SKSpriteNode spriteNodeWithImageNamed:@"sand"];
     _sand.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_sand.size.width/2];
-
+   
+ //   _pointTouched = CGPointMake(self.size.width, self.size.height/2);
+//    _sand.position = CGPointMake(self.size.width/2, self.size.height/2);
+    _sand.position = _pointTouched;
+    
     [self addChild:_sand];
-    
-    
 }
+
+-(void) spawnBunchOfSand{
+    [self runAction:[SKAction repeatAction:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSand) onTarget:self] ,
+                                                                [SKAction waitForDuration:0.02]
+                                                                ]]
+            count:100]
+     ];
+     
+}
+
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -102,7 +115,7 @@
         [self mySquareAdd];
         [self myTriangleAdd];
         [self myOctagonAdd];
-        [self spawnSand];
+    //    [self spawnBunchOfSand  ];
         
         }
     return self;
@@ -113,8 +126,10 @@
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        [self spawnSand];
-        [_sand setPosition:location];
+        _pointTouched = location;
+        [self spawnBunchOfSand];
+        
+        //        [_sand setPosition:location];
         
         }
 }
